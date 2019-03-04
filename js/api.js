@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable camelcase */
 (function($) {
-
+    
     /* Ajax-based random post fetching. */
     $(function() {
         $('#new-quote-button').on('click', function(event) {

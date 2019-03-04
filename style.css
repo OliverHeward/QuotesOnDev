@@ -198,7 +198,7 @@ input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
 fieldset {
-  border: 1px solid #c0c0c0;
+  border: 1px solid #222222;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
@@ -445,7 +445,7 @@ textarea {
 --------------------------------------------------------------*/
 /* Links */
 a {
-  color: #00aa00;
+  color: #00cc00;
   text-decoration: none; }
   a:visited {
     color: #00aa00; }
@@ -672,6 +672,19 @@ a {
   clear: both;
   margin: 0 0 1.5rem; }
 
+.error404 fieldset {
+  padding: 0;
+  margin: 0; }
+  .error404 fieldset input[type=search] {
+    width: 240px;
+    height: 35px;
+    padding: .25rem .5rem; }
+  .error404 fieldset .fa-search {
+    padding-left: .75rem;
+    padding-right: .75rem;
+    font-size: 1.25rem;
+    color: #00cc00; }
+
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -742,23 +755,32 @@ ul {
   display: inline-flex;
   list-style: none;
   margin: 1rem 0 0 0;
-  padding: 0; }
-  ul li {
+  padding: 0;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap; }
+  ul .page_item {
     border-right: 1px solid white;
     line-height: 1;
     padding: 0 1rem; }
-    ul li:first-child {
+    ul .page_item:first-child {
       padding-left: 0; }
-    ul li:last-child {
+    ul .page_item:last-child {
       border-right: 1px solid white; }
     @media (min-width: 768px) and (max-width: 1023px) {
-      ul li:last-child {
+      ul .page_item:last-child {
         border-right: 1px solid white; } }
 
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
 /* All Archives Page */
+.page-id-223 .post-archives li, .page-id-223 .category-archives li, .page-id-223 .tag-archives li {
+  font-size: 1.25rem;
+  margin-bottom: .5rem;
+  margin-right: 1.25rem; }
+
 /* Submit a Quote Page */
 /* Search Page */
 .search header.page-header, .search-results header.page-header {

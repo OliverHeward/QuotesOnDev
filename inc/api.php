@@ -2,7 +2,7 @@
 /**
  * Customize the post endpoint for WP API and add support for filter parameter back in.
  *
- * Endpoint: http://HOME_URL.COM/wp-json/wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1
+ * Endpoint: http://localhost:8888/wp-json/wp/v2/posts?filter[orderby]=rand&filter[posts_per_page]=1
  *
  * @link https://github.com/WP-API/rest-filter
  */
