@@ -1,0 +1,53 @@
+.site-info {
+  display: flex;
+  flex-wrap: wrap;
+  margin: ($base__space-unit * 3) 0 ($base__space-unit * 2);
+  
+  p {
+    display: inline-block;
+    flex: 0 1 auto;
+    line-height: 1;
+    padding-left: 1rem;
+  }
+
+  @include tablet {
+    flex-wrap: no-wrap;
+    
+    p {
+      display: inline-block;
+      flex: 0 1 auto;
+      padding-left: round( $base__space-unit * .6667 );
+    }
+  }
+
+  @include desktop {
+    justify-content: flex-end;
+  }
+}
+
+ul {
+	display: inline-flex;
+  list-style: none;
+  margin: 1rem 0 0 0;
+  padding: 0;
+
+	li {
+		border-right: 1px solid white;
+		line-height: 1;
+    padding: 0 1rem;
+    
+    &:first-child {
+      padding-left: 0;
+    }
+
+    &:last-child {
+      border-right: 1px solid white;
+    }
+
+    @include tablet {
+      &:last-child {
+        border-right: 1px solid white;
+      }
+    }
+	}
+}

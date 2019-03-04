@@ -2,32 +2,99 @@
 # Content
 --------------------------------------------------------------*/
 
+.site-content {
+    margin: ($base__space-unit * 3) 175px $base__space-unit;
+    position: relative;
+
+    &:before,
+    &:after {
+        color: $color__green;
+        font-family: 'FontAwesome';
+        font-size: 125px;
+        line-height: 125px;
+        position: absolute;
+        top: 0;
+    }
+
+    &:before {
+        content: '\f10d';
+        left: -175px;
+    }
+
+    &:after {
+        content: '\f10e';
+        right: -175px;
+    }
+}
+
+
 /* Posts and pages */
 
 .sticky {
-	display: block;
+    display: block;
 }
 
 .hentry {
-	margin: 0 0 $base__space-unit;
+    margin: 0 0 $base__space-unit;
 }
 
-.updated:not(.published){
-	display: none;
+.updated:not(.published) {
+    display: none;
 }
 
 .single .byline,
 .group-blog .byline {
-	display: inline;
+    display: inline;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: $base__space-unit 0 0;
+    margin: $base__space-unit 0 0;
 }
 
+.blog,
+.single,
+.archive {
+    .entry-content {
+        p {
+            font-size: 1.25rem;
+            font-family: $font__main;
+
+            @include tablet {
+                font-size: 1.75rem;
+            }
+
+            @include desktop {
+                font-size: 2.5rem;
+            }
+        }
+    }
+
+    .entry-meta {
+        margin-bottom: ($base__space-unit * 2);
+    }
+
+    .entry-title {
+        display: inline;
+        font-size: 1.25rem;
+        font-weight: normal;
+        margin-bottom: 0;
+    }
+
+    .source {
+        font-size: 1.25rem;
+        font-style: italic;
+    }
+
+    button {
+        margin: 0 auto;
+        display: flex;
+    }
+}
+
+
 .page-links {
-	clear: both;
-	margin: 0 0 $base__space-unit;
+    clear: both;
+    margin: 0 0 $base__space-unit;
 }
