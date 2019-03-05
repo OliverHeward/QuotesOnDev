@@ -1,30 +1,48 @@
 <?php
-/**
- * The template for displaying all single posts.
- *
- * @package QOD_Starter_Theme
- */
+    /**
+     * The template for displaying the Single Page.
+     *
+     * @package QOD_Starter_Theme
+     */
+    
+    
+    get_header(); ?> <!-- Calling Header -->
 
-get_header(); ?>
+<!-- START OF PAGE CONTENT -->
 <div id="primary" class="content-area">
     <main id="main" class="site-main" role="main">
-<?php while (have_posts()): the_post();?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
+        <!-- Start of Loop -->
+        <?php while (have_posts()): the_post();?>
+        <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+            <!-- Entry Content -->
             <div class="entry-content">
                 <?php the_content(); ?>
-            </div><!-- .entry-content -->
+            </div> <!-- End of Content -->
+            <!-- Entry-Header -->
+            <div class="entry-header">
+                <?php the_title( '<h1 class="entry-title">- ', '</h1>' ); ?>
 
-            <header class="entry-header">
-                <?php the_title( '<h1 class="entry-title"> - ', '</h1>' ); ?>
-                <?php print_r(qod_register_metaboxes()); ?>
-
-                <a id="tweetlink" href="https://twitter.com/intent/tweet?url=URL_HERE&via=quotesondev&text=yourtext"><p>Retweet this on Twitter! <i class="fa fa-retweet"></i></p></a>
-            </header><!-- .entry-header -->
-<?php endwhile;?>
-
-        </article><!-- #post-## -->
+                <!-- Start of Conditional for Source Name & Hyperlink -->
+                <?php $source = get_post_meta( get_the_ID(), '_qod_quote_source', true);
+                      $source_url = get_post_meta( get_the_ID(), '_qod_quote_source_url', true); ?>
+                <?php if ( $source && $source_url ) : ?>
+                    <span class="source"> , <a href="<?php echo $source_url; ?>"><?php echo $source; ?></a></span>
+                <?php elseif ( $source ) : ?>
+                    <span class="source"> , <?php echo $source; ?></span>
+                <?php else : ?>
+                    <span class="source"></span>
+                <?php endif; ?> <!-- End of Conditional -->
+            </div> <!-- End of Entry-Header -->
+            <?php endwhile;?> <!-- End of Loop -->
+            <!-- Re-tweet Quote -->
+            <a id="tweetlink" href="https://twitter.com/intent/tweet?url=URL_HERE&via=quotesondev&text=yourtext">
+                <p>Retweet this on Twitter!  <i class="fa fa-retweet"></i></p>
+            </a>
+        </article>
+        <!-- Show Me Another Button -->
         <button type="button" id="new-quote-button">Show Me Another!</button>
-    </main><!-- #main -->
-</div><!-- #primary -->
-<?php get_footer(); ?>
+    </main> <!-- End of Main -->
+</div> <!-- End of Primary -->
+
+<?php get_footer(); ?> <!-- Calling Footer -->

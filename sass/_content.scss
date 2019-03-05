@@ -4,32 +4,33 @@
 
 .site-content {
     @include desktop {
-    margin: ($base__space-unit * 3) 175px $base__space-unit;
-    position: relative;
+        margin: ($base__space-unit * 3) 175px $base__space-unit;
+        position: relative;
 
-    &:before,
-    &:after {
-        color: $color__green;
-        font-family: 'FontAwesome';
-        font-size: 125px;
-        line-height: 125px;
-        position: absolute;
-        top: 0;
-    }
-    &:before {
-        content: '\f10d';
-        left: -175px;
-    }
+        &:before,
+        &:after {
+            color: $color__green;
+            font-family: 'FontAwesome';
+            font-size: 125px;
+            line-height: 125px;
+            position: absolute;
+            top: 0;
+        }
 
-    &:after {
-        content: '\f10e';
-        right: -175px;
+        &:before {
+            content: '\f10d';
+            left: -175px;
+        }
+
+        &:after {
+            content: '\f10e';
+            right: -175px;
+        }
     }
 }
-}
 
 
-/* Posts and pages */
+/* === Posts and pages === */
 
 .sticky {
     display: block;
@@ -53,6 +54,8 @@
 .entry-summary {
     margin: $base__space-unit 0 0;
 }
+
+/* === Styling for blog, single archive === */
 
 .blog,
 .single,
@@ -93,7 +96,8 @@
     }
 }
 
-.single, .home {
+.single,
+.home {
     a {
         p {
             font-size: 1.25rem;
@@ -101,13 +105,13 @@
     }
 }
 
-
 .page-links {
     clear: both;
     margin: 0 0 $base__space-unit;
 }
 
-// ERROR 404 PAGE 
+
+/* === ERROR 404 PAGE === */
 
 .error404 {
     fieldset {

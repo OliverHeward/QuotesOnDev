@@ -265,14 +265,22 @@ textarea {
   line-height: 1.5; }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   clear: both; }
 
 /* Copy */
 p {
   margin-bottom: 1.5rem; }
 
-dfn, cite, em, i {
+dfn,
+cite,
+em,
+i {
   font-style: italic; }
 
 blockquote {
@@ -291,15 +299,20 @@ pre {
   overflow: auto;
   padding: 1.6rem; }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: .9375rem; }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help; }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none; }
 
@@ -443,10 +456,6 @@ input[type="search"] {
 textarea {
   padding-left: 3px;
   width: 100%; }
-
-.wpcf7-form-control-wrap .quote {
-  width: 100%;
-  height: 100px; }
 
 /* New Quote Button */
 @media (min-width: 1024px) {
@@ -600,108 +609,6 @@ a {
   width: 100%; }
 
 /*--------------------------------------------------------------
-# Content
---------------------------------------------------------------*/
-@media (min-width: 1024px) {
-  .site-content {
-    margin: 4.5rem 175px 1.5rem;
-    position: relative; }
-    .site-content:before, .site-content:after {
-      color: #00cc00;
-      font-family: 'FontAwesome';
-      font-size: 125px;
-      line-height: 125px;
-      position: absolute;
-      top: 0; }
-    .site-content:before {
-      content: '\f10d';
-      left: -175px; }
-    .site-content:after {
-      content: '\f10e';
-      right: -175px; } }
-
-/* Posts and pages */
-.sticky {
-  display: block; }
-
-.hentry {
-  margin: 0 0 1.5rem; }
-
-.updated:not(.published) {
-  display: none; }
-
-.single .byline,
-.group-blog .byline {
-  display: inline; }
-
-.page-content,
-.entry-content,
-.entry-summary {
-  margin: 1.5rem 0 0; }
-
-.blog .entry-content p,
-.single .entry-content p,
-.archive .entry-content p {
-  font-size: 1.25rem;
-  font-family: "Exo Light", sans-serif; }
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .blog .entry-content p,
-    .single .entry-content p,
-    .archive .entry-content p {
-      font-size: 1.75rem; } }
-  @media (min-width: 1024px) {
-    .blog .entry-content p,
-    .single .entry-content p,
-    .archive .entry-content p {
-      font-size: 2.5rem; } }
-
-.blog .entry-meta,
-.single .entry-meta,
-.archive .entry-meta {
-  margin-bottom: 3rem; }
-
-.blog .entry-title,
-.single .entry-title,
-.archive .entry-title {
-  display: inline;
-  font-size: 1.25rem;
-  font-weight: normal;
-  margin-bottom: 0; }
-
-.blog .source,
-.single .source,
-.archive .source {
-  font-size: 1.25rem;
-  font-style: italic; }
-
-.blog button,
-.single button,
-.archive button {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex; }
-
-.single a p, .home a p {
-  font-size: 1.25rem; }
-
-.page-links {
-  clear: both;
-  margin: 0 0 1.5rem; }
-
-.error404 fieldset {
-  padding: 0;
-  margin: 0; }
-  .error404 fieldset input[type=search] {
-    width: 240px;
-    height: 35px;
-    padding: .25rem .5rem; }
-  .error404 fieldset .fa-search {
-    padding-left: .75rem;
-    padding-right: .75rem;
-    font-size: 1.25rem;
-    color: #00cc00; }
-
-/*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
 .page-content .wp-smiley,
@@ -718,6 +625,9 @@ iframe,
 object {
   max-width: 100%; }
 
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
 .site-header {
   margin-top: 3rem; }
 
@@ -792,7 +702,16 @@ ul {
 /*--------------------------------------------------------------
 # Page Templates
 --------------------------------------------------------------*/
-/* All Archives Page */
+/* Container for Entire site */
+.container {
+  margin: 0 auto;
+  max-width: 1080px;
+  padding: 2.5%;
+  width: 100%; }
+
+/*--------------------------------------------------------------
+# All Archives on Archives Page
+--------------------------------------------------------------*/
 .page-id-223 .post-archives li,
 .page-id-223 .category-archives li,
 .page-id-223 .tag-archives li {
@@ -800,7 +719,9 @@ ul {
   margin-bottom: .5rem;
   margin-right: 1.25rem; }
 
-/* Submit a Quote Page */
+/*--------------------------------------------------------------
+# Submit A Quote Page
+--------------------------------------------------------------*/
 .page-id-214 #submitQuote p {
   margin: 0;
   padding: 0; }
@@ -816,7 +737,9 @@ ul {
 .page-id-214 input[type=submit] {
   margin-top: 1rem; }
 
-/* Search Page */
+/*--------------------------------------------------------------
+# Search Page
+--------------------------------------------------------------*/
 .search header.page-header,
 .search-results header.page-header {
   border-bottom: 1px dashed #fff; }
@@ -824,3 +747,108 @@ ul {
 .search h2.entry-title,
 .search-results h2.entry-title {
   font-family: 'Exo Medium'; }
+
+/*--------------------------------------------------------------
+# Content
+--------------------------------------------------------------*/
+@media (min-width: 1024px) {
+  .site-content {
+    margin: 4.5rem 175px 1.5rem;
+    position: relative; }
+    .site-content:before, .site-content:after {
+      color: #00cc00;
+      font-family: 'FontAwesome';
+      font-size: 125px;
+      line-height: 125px;
+      position: absolute;
+      top: 0; }
+    .site-content:before {
+      content: '\f10d';
+      left: -175px; }
+    .site-content:after {
+      content: '\f10e';
+      right: -175px; } }
+
+/* === Posts and pages === */
+.sticky {
+  display: block; }
+
+.hentry {
+  margin: 0 0 1.5rem; }
+
+.updated:not(.published) {
+  display: none; }
+
+.single .byline,
+.group-blog .byline {
+  display: inline; }
+
+.page-content,
+.entry-content,
+.entry-summary {
+  margin: 1.5rem 0 0; }
+
+/* === Styling for blog, single archive === */
+.blog .entry-content p,
+.single .entry-content p,
+.archive .entry-content p {
+  font-size: 1.25rem;
+  font-family: "Exo Light", sans-serif; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .blog .entry-content p,
+    .single .entry-content p,
+    .archive .entry-content p {
+      font-size: 1.75rem; } }
+  @media (min-width: 1024px) {
+    .blog .entry-content p,
+    .single .entry-content p,
+    .archive .entry-content p {
+      font-size: 2.5rem; } }
+
+.blog .entry-meta,
+.single .entry-meta,
+.archive .entry-meta {
+  margin-bottom: 3rem; }
+
+.blog .entry-title,
+.single .entry-title,
+.archive .entry-title {
+  display: inline;
+  font-size: 1.25rem;
+  font-weight: normal;
+  margin-bottom: 0; }
+
+.blog .source,
+.single .source,
+.archive .source {
+  font-size: 1.25rem;
+  font-style: italic; }
+
+.blog button,
+.single button,
+.archive button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+
+.single a p,
+.home a p {
+  font-size: 1.25rem; }
+
+.page-links {
+  clear: both;
+  margin: 0 0 1.5rem; }
+
+/* === ERROR 404 PAGE === */
+.error404 fieldset {
+  padding: 0;
+  margin: 0; }
+  .error404 fieldset input[type=search] {
+    width: 240px;
+    height: 35px;
+    padding: .25rem .5rem; }
+  .error404 fieldset .fa-search {
+    padding-left: .75rem;
+    padding-right: .75rem;
+    font-size: 1.25rem;
+    color: #00cc00; }

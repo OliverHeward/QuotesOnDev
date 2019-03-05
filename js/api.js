@@ -35,13 +35,13 @@
 
                 // update the URL using history
                 let url = 'http://localhost:8888/quotesondev/' + post.slug;
-                // history.pushState(null, null, url)
+                history.pushState(null, null, url)
                 console.log(post)
                 // Make the back and forward nav work with the history API
-                // window.addEventListener('popstate', function(event) {
-                // let LastPage = document.URL;
-                // window.location.replace(LastPage);
-                // })
+                window.addEventListener('popstate', function(event) {
+                let LastPage = document.URL;
+                window.location.replace(LastPage);
+                })
             })
         })
     });
@@ -74,8 +74,8 @@
                     .val('');
 
                 var status = xhr.status;
-                if (status === 200) {
-                    $('.submit-success').text(api_vars.success)
+                if (status === 201) {
+                    $('.submit-success').text(api_vars.success);
                 }
                 // clear the form fields and hide the form
                 //Use jquery so hide the form in a slidey way

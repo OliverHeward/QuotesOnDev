@@ -63,8 +63,6 @@ function qod_scripts() {
 	wp_enqueue_script( 'qod-starter-navigation', get_template_directory_uri() . '/build/js/navigation.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'qod-starter-skip-link-focus-fix', get_template_directory_uri() . '/build/js/skip-link-focus-fix.min.js', array(), '20151215', true );
 	wp_enqueue_script( 'twitter', 'https://platform.twitter.com/widgets.js');
-}
-
 	if(function_exists('rest_url')) {
 		wp_enqueue_script('qod_api', get_template_directory_uri() . '/build/js/api.min.js', array(), false, true);
 		wp_localize_script('qod_api', 'api_vars',
@@ -74,6 +72,9 @@ function qod_scripts() {
 				'success' => 'Thanks, your quote submission was received!',
 				'failure' => 'Your submission could not be processed.'));
 	}
+}
+
+
 add_action( 'wp_enqueue_scripts', 'qod_scripts' );
 
 /**
