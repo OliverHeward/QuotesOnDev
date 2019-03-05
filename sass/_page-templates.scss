@@ -5,29 +5,55 @@
 /* All Archives Page */
 
 .page-id-223 {
-	.post-archives, .category-archives, .tag-archives {
-		li {
-			font-size: 1.25rem;
-			margin-bottom: .5rem;
-			margin-right: 1.25rem;
-		}
-	}
+
+    .post-archives,
+    .category-archives,
+    .tag-archives {
+        li {
+            font-size: 1.25rem;
+            margin-bottom: .5rem;
+            margin-right: 1.25rem;
+        }
+    }
 }
 
 /* Submit a Quote Page */
 
+.page-id-214 {
+    #submitQuote {
+        p {
+            margin: 0;
+            padding: 0;
+        }
+    }
 
+    input[type=text],
+        {
+        margin-bottom: 1rem;
+        width: 60%;
+    }
+
+    textarea {
+        height: 7rem;
+        margin-bottom: 1rem
+    }
+
+    input[type=submit] {
+        margin-top: 1rem;
+    }
+}
 
 /* Search Page */
 
-.search, .search-results { 
+.search,
+.search-results {
 
-	header.page-header {
-		border-bottom: 1px dashed #fff;
-	}
+    header.page-header {
+        border-bottom: 1px dashed #fff;
+    }
 
-	h2.entry-title {
-		font-family: 'Exo Medium';
-	}
+    h2.entry-title {
+        font-family: 'Exo Medium';
+    }
 
 }

@@ -23,7 +23,7 @@ if ( $all_posts->have_posts() ) :
 ?>
             <ul>
                 <?php while ( $all_posts->have_posts() ) : $all_posts->the_post(); ?>
-                <li><a href="<?php the_permalink(); ?>">
+                <li><a href="<?php echo get_the_permalink(); ?>">
                         <?php the_title(); ?></a></li>
                 <?php endwhile; ?>
             </ul>

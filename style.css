@@ -776,15 +776,34 @@ ul {
 # Page Templates
 --------------------------------------------------------------*/
 /* All Archives Page */
-.page-id-223 .post-archives li, .page-id-223 .category-archives li, .page-id-223 .tag-archives li {
+.page-id-223 .post-archives li,
+.page-id-223 .category-archives li,
+.page-id-223 .tag-archives li {
   font-size: 1.25rem;
   margin-bottom: .5rem;
   margin-right: 1.25rem; }
 
 /* Submit a Quote Page */
+.page-id-214 #submitQuote p {
+  margin: 0;
+  padding: 0; }
+
+.page-id-214 input[type=text] {
+  margin-bottom: 1rem;
+  width: 60%; }
+
+.page-id-214 textarea {
+  height: 7rem;
+  margin-bottom: 1rem; }
+
+.page-id-214 input[type=submit] {
+  margin-top: 1rem; }
+
 /* Search Page */
-.search header.page-header, .search-results header.page-header {
+.search header.page-header,
+.search-results header.page-header {
   border-bottom: 1px dashed #fff; }
 
-.search h2.entry-title, .search-results h2.entry-title {
+.search h2.entry-title,
+.search-results h2.entry-title {
   font-family: 'Exo Medium'; }

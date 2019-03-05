@@ -17,15 +17,18 @@ get_header(); ?>
             </header><!-- .entry-header -->
             <div class="entry-content">
                 <div class="entry-content">
-                        <form method="post" novalidate="novalidate">
-                            <p><label> Author of Quote<br>
-                                   <input type="text" name="Author" value="" size="40" class="author" id="update-title" aria-invalid="false"></label></p>
-                            <p><label> Quote<br>
-                                    <textarea name="Quote" cols="40" rows="10" class="quote-text" id="quote" aria-invalid="false"></textarea></label></p>
-                            <p><label> Where did you find this quote? (e.g. book name)<br>
-                                    <input type="text" name="Reference" value="" size="40" class="where-text" id="quote-where" aria-invalid="false"> </label></p>
-                            <p><label> Provide the URL of the quote source, if available.<br>
-                                    <input type="url" name="URL" value="" size="40" class="url-text" id="quote-url" aria-invalid="false"> </label></p>
+                    <form id="submitQuote">
+                        <p>Author of Quote</p>
+                            <input type="text" id="update-title" />
+                        <p>Quote</p>
+                            <textarea id="quote"></textarea>
+                        <p>Where did you find this quote? (e.g. book name)</p>
+                            <input type="text" id="quote-where" />
+                        <p>Provide the url of the quote source, if available.</p>
+                            <input type="text" id="quote-url" />
+
+                            <p class="submit-success"></p>
+                            <p class="submit-failure"></p>
                             <p><input type="submit" value="Submit" class="submit" id="submitQuote"><span class="ajax-loader"></span></p>
                         </form>
                     </div>
