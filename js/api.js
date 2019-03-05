@@ -24,8 +24,14 @@
                     quoteSourceUrl = post._qod_quote_source_url;
                 $('.entry-title').text(title);
                 $('.entry-content').html(content);
+                const encodedUrl = encodeURIComponent($('.entry-content').text());
                 $('.source').html('<a href="' + quoteSourceUrl + '">' + quoteSource + '</a>');
-                $('#tweetlink').attr('href', "http://twitter.com/intent/tweet?url=" + quoteSourceUrl + "&via=quotesondev&text=" + content).unwrap(content); 
+
+
+                $('#tweetlink').attr('href', "http://twitter.com/intent/tweet?url=" + quoteSourceUrl + "&via=quotesondev&text=" + encodedUrl);
+
+
+
 
                 // update the URL using history
                 let url = 'http://localhost:8888/quotesondev/' + post.slug;
