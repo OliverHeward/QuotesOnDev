@@ -7,7 +7,6 @@
     display: inline-block;
     flex: 0 1 auto;
     line-height: 1;
-    padding-left: 1rem;
   }
 
   @include tablet {
@@ -22,6 +21,12 @@
 
   @include desktop {
     justify-content: flex-end;
+
+    p {
+      padding-left: 1rem;
+    }
+
+
   }
 }
 

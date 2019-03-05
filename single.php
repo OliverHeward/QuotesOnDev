@@ -17,6 +17,8 @@ get_header(); ?>
 
             <header class="entry-header">
                 <?php the_title( '<h1 class="entry-title"> - ', '</h1>' ); ?>
+                <?php print_r(qod_register_metaboxes()); ?>
+
                 <a id="tweetlink" href="https://twitter.com/intent/tweet?url=URL_HERE&via=quotesondev&text=yourtext"><p>Retweet this on Twitter! <i class="fa fa-retweet"></i></p></a>
             </header><!-- .entry-header -->
 <?php endwhile;?>

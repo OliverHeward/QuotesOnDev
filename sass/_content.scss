@@ -3,6 +3,7 @@
 --------------------------------------------------------------*/
 
 .site-content {
+    @include desktop {
     margin: ($base__space-unit * 3) 175px $base__space-unit;
     position: relative;
 
@@ -15,7 +16,6 @@
         position: absolute;
         top: 0;
     }
-
     &:before {
         content: '\f10d';
         left: -175px;
@@ -25,6 +25,7 @@
         content: '\f10e';
         right: -175px;
     }
+}
 }
 
 
@@ -88,8 +89,15 @@
     }
 
     button {
-        margin: 0 auto;
         display: flex;
+    }
+}
+
+.single, .home {
+    a {
+        p {
+            font-size: 1.25rem;
+        }
     }
 }
 

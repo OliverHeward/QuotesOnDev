@@ -22,7 +22,7 @@
                     content = post.content.rendered,
                     quoteSource = post._qod_quote_source,
                     quoteSourceUrl = post._qod_quote_source_url;
-                $('.entry-title').text(title);
+                $('.entry-title').text(' - ' + title);
                 $('.entry-content').html(content);
                 const encodedUrl = encodeURIComponent($('.entry-content').text());
                 $('.source').html('<a href="' + quoteSourceUrl + '">' + quoteSource + '</a>');
