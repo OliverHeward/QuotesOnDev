@@ -47,7 +47,7 @@
             })
         })
     });
-    /* AJAX- Based Front-End Post Submissions */
+    /* AJAX - Based Front-End Post Submissions */
     $(function() {
         $('#submitQuote').on('submit', function(event) {
             event.preventDefault();
