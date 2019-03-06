@@ -2,15 +2,15 @@
 /* eslint-disable camelcase */
 (function($) {
 
-    /* Ajax-based random post fetching. */
+    /* Ajax-Based Random Quote Fetch */
     $(function() {
         $('#new-quote-button').on('click', function(event) {
             event.preventDefault();
 
-            // fetch a new quote
-            // get the first and only post array
-            // update the quote content and name of the quoted person
-            // display quote source if available 
+            // Fetch a New Quote
+            // Get the First and Only Array
+            // Update the Quote Content and Name of the Quote Author
+            // Display Quote Source if Avaliable
             $.ajax({
                 method: 'GET',
                 url: api_vars.root_url +
@@ -24,32 +24,36 @@
                     quoteSourceUrl = post._qod_quote_source_url;
                 $('.entry-title').text(' - ' + title);
                 $('.entry-content').html(content);
-                const encodedUrl = encodeURIComponent($('.entry-content').text());
                 $('.source').html('<a href="' + quoteSourceUrl + '">' + quoteSource + '</a>');
 
+                // Entry-Content saved into Variable with encoeURIcomponent passed through it
+                const encodedUrl = encodeURIComponent($('.entry-content').text());
 
+                // On each Quote load - the Retweet button is given the Source URL and the Content Automatically
                 $('#tweetlink').attr('href', "http://twitter.com/intent/tweet?url=" + quoteSourceUrl + "&via=quotesondev&text=" + encodedUrl);
 
 
 
 
-                // update the URL using history
+                // Update the URL using History
                 let url = 'http://localhost:8888/quotesondev/' + post.slug;
                 history.pushState(null, null, url)
-                console.log(post)
-                // Make the back and forward nav work with the history API
+
+                // Make the Back and Forward Nav Work With the History API
                 window.addEventListener('popstate', function(event) {
-                let LastPage = document.URL;
-                window.location.replace(LastPage);
+                    let LastPage = document.URL;
+                    window.location.replace(LastPage);
                 })
             })
         })
     });
-    /* Ajax-based front-end post submissions */
+    /* AJAX- Based Front-End Post Submissions */
     $(function() {
         $('#submitQuote').on('submit', function(event) {
             event.preventDefault();
-            // Event on submit of the form
+            // Event on Submit Form
+            // Saving Data from Title, Quote, Quote Source and Quote URL
+            // Setting Post Status to 'Pending'
             const data = {
                 title: $('#update-title').val(),
                 content: $('#quote').val(),
@@ -57,36 +61,33 @@
                 _qod_quote_source_url: $('#quote-url').val(),
                 post_status: 'pending'
             }
-
+            // AJAX POST Data Request
             $.ajax({
                 method: 'POST',
                 url: api_vars.root_url + 'wp/v2/posts',
                 data,
                 beforeSend: function(xhr) {
                     xhr.setRequestHeader('X-WP-Nonce', api_vars.nonce);
-                    //get the code to add a nonce from the documentation,
+                    // Get The Code to Add a Nonce from the Documentation
                 }
-
+                // Done Function
             }).done(function(data, statusText, xhr) {
                 $('#submitQuote')
                     .slideUp()
                     .find('input[type=“submit”], input[type=“text”], textarea')
                     .val('');
-
+                // On Success - Clear and Hide the Form
                 var status = xhr.status;
                 if (status === 201) {
                     $('.submit-success').text(api_vars.success);
                 }
-                // clear the form fields and hide the form
-                //Use jquery so hide the form in a slidey way
+                // On Success - Show Success Message set using the var from Functions.php 
 
-                //show success message using the var from functions.php
-
-
+                // Fail Function
             }).fail(function() {
                 $('#submitQuote').slideUp()
                 $('.submit-failure').text(api_vars.failure);
-                //Post and alert with failure var from function.php
+                // On Failure - Show Failure Message set using the var from Functions.php
             })
         })
 

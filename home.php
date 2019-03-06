@@ -36,7 +36,8 @@
             </div> <!-- End of Entry-Header -->
             <?php endwhile;?> <!-- End of Loop -->
             <!-- Re-tweet Quote -->
-            <a id="tweetlink" href="https://twitter.com/intent/tweet?url=URL_HERE&via=quotesondev&text=yourtext">
+            <!-- PHP echo's allow for Retweet function to work on initial page load -->
+            <a id="tweetlink" href="https://twitter.com/intent/tweet?url=<?php echo $source_url ?>&via=quotesondev&text=<?php echo strip_tags(get_the_content()); ?>">
                 <p>Retweet this on Twitter!  <i class="fa fa-retweet"></i></p>
             </a>
         </article>

@@ -340,7 +340,7 @@ body {
 
 blockquote,
 q {
-  quotes: '' ''; }
+  quotes: "" ""; }
   blockquote:before, blockquote:after,
   q:before,
   q:after {
@@ -602,12 +602,6 @@ a {
   content: "";
   display: table; }
 
-.container {
-  margin: 0 auto;
-  max-width: 1080px;
-  padding: 2.5%;
-  width: 100%; }
-
 /*--------------------------------------------------------------
 # Media
 --------------------------------------------------------------*/
@@ -645,6 +639,9 @@ object {
     margin: 0 auto;
     width: 700px; }
 
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
 .site-info {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -712,12 +709,20 @@ ul {
 /*--------------------------------------------------------------
 # All Archives on Archives Page
 --------------------------------------------------------------*/
-.page-id-223 .post-archives li,
-.page-id-223 .category-archives li,
-.page-id-223 .tag-archives li {
-  font-size: 1.25rem;
-  margin-bottom: .5rem;
-  margin-right: 1.25rem; }
+.page-id-223 h1 {
+  margin-bottom: 3rem; }
+
+.page-id-223 .post-archives ul,
+.page-id-223 .category-archives ul,
+.page-id-223 .tag-archives ul {
+  margin-top: 0;
+  margin-bottom: 1rem; }
+  .page-id-223 .post-archives ul li,
+  .page-id-223 .category-archives ul li,
+  .page-id-223 .tag-archives ul li {
+    font-size: 1.25rem;
+    margin-bottom: .5rem;
+    margin-right: 1.25rem; }
 
 /*--------------------------------------------------------------
 # Submit A Quote Page
@@ -769,7 +774,9 @@ ul {
       content: '\f10e';
       right: -175px; } }
 
-/* === Posts and pages === */
+/*--------------------------------------------------------------
+# Posts & Pages
+--------------------------------------------------------------*/
 .sticky {
   display: block; }
 
@@ -788,7 +795,9 @@ ul {
 .entry-summary {
   margin: 1.5rem 0 0; }
 
-/* === Styling for blog, single archive === */
+/*--------------------------------------------------------------
+# Styling for Blog, Single, Archive
+--------------------------------------------------------------*/
 .blog .entry-content p,
 .single .entry-content p,
 .archive .entry-content p {
@@ -839,7 +848,9 @@ ul {
   clear: both;
   margin: 0 0 1.5rem; }
 
-/* === ERROR 404 PAGE === */
+/*--------------------------------------------------------------
+# 404 Page - Error Page
+--------------------------------------------------------------*/
 .error404 fieldset {
   padding: 0;
   margin: 0; }
